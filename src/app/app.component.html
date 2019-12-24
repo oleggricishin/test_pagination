@@ -1,21 +1,46 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div *ngIf="!selectedRecipe">
+  <div style="text-align:center">
+    <h1>
+      Recipes
+    </h1>
+  </div>
+  <div class="recipes-block-list">
+    <div *ngFor="let recipe of recipesToShow" class="recipe-block" (click)="onSelect(recipe)">
+      <div class="inner-block">
+        <div class="title-block">{{recipe.title}}</div>
+        <img [src]="recipe.image" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="pagination-block">
+    <app-pagination [page]="page" [perPage]="perPage" [items]="recipes" (changePage)="onPageChange($event)"></app-pagination>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div *ngIf="selectedRecipe">
+  <div class="go-back" (click)="onBack()">
+    <- Back to all recipes
+  </div>
+  <div style="text-align:center">
+    <h1>
+      {{selectedRecipe.title}}
+    </h1>
+  </div>
+  <div class="main-recipe-block">
+    <p>
+      <img [src]="selectedRecipe.image" alt="">
+      <span *ngIf="selectedRecipe.description">{{selectedRecipe.description}}</span>
+      <span *ngIf="!selectedRecipe.description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel suscipit diam, vitae pellentesque risus. Nam vitae volutpat lorem. Cras quis libero lobortis, efficitur odio eu, tristique velit. Morbi quis mattis est. Donec ex velit, bibendum sit amet urna nec, ultrices hendrerit enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris faucibus urna in mi egestas, eu fringilla mi egestas. Nunc semper malesuada augue, id imperdiet magna vulputate sit amet. Vivamus nisl odio, blandit ac urna et, sodales imperdiet leo. Ut nulla erat, malesuada vitae volutpat sed, varius vel nisi. Vivamus ultricies dictum neque, vel laoreet mi molestie eu.
 
-<router-outlet></router-outlet>
+Nunc pulvinar sapien sit amet augue dictum, eget ullamcorper lorem consequat. Etiam ut congue nisl, in rutrum tellus. Aliquam feugiat, odio quis sagittis egestas, elit lorem venenatis urna, molestie suscipit dui nunc ullamcorper augue. Nunc arcu ex, finibus sit amet hendrerit a, interdum vitae orci. Nulla dictum venenatis nulla, egestas finibus tellus sodales id. Etiam sodales ligula non tempor congue. Morbi mattis ex nec interdum viverra. Aenean eu finibus massa. Aenean tincidunt sit amet sapien sed suscipit.
+
+Cras elit sem, tempus vel placerat in, malesuada in est. Curabitur posuere tristique nisi, suscipit molestie nisi. Ut molestie, neque auctor lobortis placerat, sapien metus dictum neque, feugiat lacinia arcu orci ac nunc. Sed rhoncus quam non suscipit cursus. Nulla felis enim, interdum vitae feugiat et, euismod nec libero. Pellentesque et rutrum purus. In hac habitasse platea dictumst. Vivamus vel venenatis quam. Quisque lobortis elit auctor diam interdum, sed sollicitudin erat semper. Vivamus malesuada odio id elit ultrices, vel placerat justo vehicula. Quisque sit amet dolor dictum, commodo leo molestie, eleifend est. Suspendisse tempus quam efficitur feugiat maximus. Donec sed egestas neque.
+
+Phasellus aliquam lacus ut dui posuere, quis gravida ipsum auctor. Aliquam erat volutpat. Nulla pulvinar felis felis. Curabitur lacus nulla, porttitor quis risus id, euismod commodo odio. Suspendisse tincidunt tincidunt mollis. Maecenas in orci pretium, gravida turpis id, finibus lacus. Donec mollis tortor nulla.
+
+Aliquam egestas, leo quis mollis porta, est nisl vulputate ligula, sed pulvinar est ligula quis nisi. Curabitur euismod lacinia luctus. Maecenas diam diam, congue nec feugiat a, facilisis eget nisi. Donec posuere pellentesque posuere. Sed sit amet ante sed nibh pulvinar consectetur. Vestibulum eget nulla vitae magna egestas aliquet. Donec tincidunt id enim sit amet sagittis. Aenean non nibh rutrum, semper velit non, porttitor nibh. Nam at egestas risus. In nibh sem, lacinia in velit sed, ornare gravida nunc. Mauris posuere tellus eget tortor mollis ultricies. Mauris ac sodales odio. Pellentesque in maximus leo, ut semper nisi. Pellentesque in tempus dolor.</span>
+    </p>
+  </div>
+</div>
+
+

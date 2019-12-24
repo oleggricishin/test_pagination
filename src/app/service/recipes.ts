@@ -1,0 +1,22 @@
+export const RECIPES: any[] = [
+  { id: 1, title: 'Recipe 1', description: '', image: 'https://www.smachno.in.ua/files/2017/salaty/kobb-salat/kobb-salat.jpg' },
+  { id: 2, title: 'Recipe 2', description: '', image: 'https://smachno.ua/wp-content/uploads/2017/11/27/photo_2017-11-27_14-53-20.jpg' },
+  { id: 3, title: 'Recipe 3', description: '', image: 'https://shefkuhar.com.ua/uploads/posts/2017-12/1514649918_0.jpg' },
+  { id: 4, title: 'Recipe 4', description: '', image: 'https://ranok.ictv.ua/wp-content/uploads/sites/59/2019/07/22/dreamstime_s_119453568.jpg' },
+  { id: 5, title: 'Recipe 5', description: '', image: 'https://ukr.media/static/ba/aimg/3/7/5/375410_1.jpg' },
+  { id: 6, title: 'Recipe 6', description: '', image: 'https://smachno.ua/wp-content/uploads/2018/12/04/67.jpg' },
+  { id: 7, title: 'Recipe 7', description: '', image: 'https://smachno.ua/wp-content/uploads/2017/11/27/photo_2017-11-27_14-53-20.jpg' },
+  { id: 8, title: 'Recipe 8', description: '', image: 'https://ukr.media/static/ba/aimg/3/7/5/375410_1.jpg' },
+  { id: 9, title: 'Recipe 9', description: '', image: 'https://smachno.ua/wp-content/uploads/2018/12/04/67.jpg' },
+  { id: 10, title: 'Recipe 10', description: '', image: 'https://ranok.ictv.ua/wp-content/uploads/sites/59/2019/07/22/dreamstime_s_119453568.jpg' },
+  { id: 11, title: 'Recipe 11', description: '', image: 'https://www.smachno.in.ua/files/2017/salaty/kobb-salat/kobb-salat.jpg' },
+  { id: 12, title: 'Recipe 12', description: '', image: 'https://shefkuhar.com.ua/uploads/posts/2017-12/1514649918_0.jpg' },
+  { id: 13, title: 'Recipe 13', description: '', image: 'https://smachno.ua/wp-content/uploads/2018/12/04/67.jpg' },
+  { id: 14, title: 'Recipe 14', description: '', image: 'https://ukr.media/static/ba/aimg/3/7/5/375410_1.jpg' },
+  { id: 15, title: 'Recipe 15', description: '', image: 'https://shefkuhar.com.ua/uploads/posts/2017-12/1514649918_0.jpg' },
+  { id: 16, title: 'Recipe 16', description: '', image: 'https://ranok.ictv.ua/wp-content/uploads/sites/59/2019/07/22/dreamstime_s_119453568.jpg' },
+  { id: 17, title: 'Recipe 17', description: '', image: 'https://smachno.ua/wp-content/uploads/2017/11/27/photo_2017-11-27_14-53-20.jpg' },
+  { id: 18, title: 'Recipe 18', description: '', image: 'https://smachno.ua/wp-content/uploads/2018/12/04/67.jpg'},
+  { id: 19, title: 'Recipe 19', description: '', image: 'https://www.smachno.in.ua/files/2017/salaty/kobb-salat/kobb-salat.jpg' },
+  { id: 20, title: 'Recipe 20', description: '', image: 'https://smachno.ua/wp-content/uploads/2018/12/04/67.jpg' }
+];

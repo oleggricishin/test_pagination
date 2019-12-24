@@ -1,0 +1,5 @@
+<div class="pagination-page">
+  <div *ngFor="let pageList of paginationArray" class="page-item" [class.active-page]="page === pageList" (click)="setPage(pageList)">
+    {{pageList}}
+  </div>
+</div>
